@@ -4,6 +4,8 @@ export interface IUserInfo {
   id: string
   name: string
   avatar: string
+  birthday?: string
+  gender?: string
 }
 
 export const userState = atom<IUserInfo>({

@@ -6,13 +6,12 @@ import {
   useNavigate
 } from 'zmp-ui';
 import { useRecoilValue } from 'recoil';
-import { userInfo } from "zmp-sdk";
-import { userState } from '../state';
+import { IUserInfo, userState } from '../state';
 
 import UserCard from '../components/user-card';
 
 const HomePage:React.FunctionComponent = () => {
-  const user = useRecoilValue<userInfo>(userState);
+  const user = useRecoilValue<IUserInfo>(userState);
   const navigate = useNavigate()
   return (
     <Page  className="page">

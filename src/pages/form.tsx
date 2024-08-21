@@ -1,13 +1,12 @@
 import React from 'react';
 import { Button, Input, Box, Page, useSnackbar } from 'zmp-ui';
 import { useRecoilState } from 'recoil';
-import { userInfo } from 'zmp-sdk';
-import { userState } from '../state';
+import { IUserInfo, userState } from '../state';
 
-type UserForm = Omit<userInfo, "id">
+type UserForm = Omit<IUserInfo, "id">
 
 const FormPage: React.FunctionComponent = () => {
-  const [user, setUser] = useRecoilState<userInfo>(userState)
+  const [user, setUser] = useRecoilState<IUserInfo>(userState)
   const [form, setForm] = React.useState<UserForm>({ name: user.name, avatar: user.avatar, birthday: user.birthday, gender: user.gender });
   const snackbar = useSnackbar()
 
